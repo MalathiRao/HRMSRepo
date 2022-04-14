@@ -1,0 +1,130 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["PageHeader"] = "Add Page";
+}
+
+@model HRMS.Web.Models.Client
+
+<div class="animatedParent animateOnce">
+    <div class="container-fluid my-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body b-b">
+                        <h4>Edit Client</h4>
+                        <form class="form-material" method="Post" asp-action="Edit">
+                            <!-- Input -->
+                            <div class="body">
+                                <div class="row clearfix">
+
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    @if (@ViewBag.IsEdit)
+                                    {
+                                        <input type="hidden" asp-for="ClientId" />
+                                    }
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="ClientId" class="form-control" />
+                                                <label class="form-label">ClientId</label>
+                                                <span asp-validation-for="ClientId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="ClientName" class="form-control" />
+                                                <label class="form-label">ClientName</label>
+                                                <span asp-validation-for="ClientName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="Address" class="form-control" />
+                                                <label class="form-label">Address</label>
+                                                <span asp-validation-for="Address" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text"  asp-for="Website" class="form-control" />
+                                                <label class="form-label">Website</label>
+                                                <span asp-validation-for="Website" class="text-danger"></span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="PrimaryContactPersonName" class="form-control" />
+                                                <label class="form-label">PrimaryContactPersonName</label>
+                                                <span asp-validation-for="PrimaryContactPersonName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="PrimaryContactPersonEmail" class="form-control" />
+                                                <label class="form-label">PrimaryContactPersonEmail</label>
+                                                <span asp-validation-for="PrimaryContactPersonEmail" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="SecondaryContactPersonName" class="form-control" />
+                                                <label class="form-label">SecondaryContactPersonName</label>
+                                                <span asp-validation-for="SecondaryContactPersonName" class="text-danger"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" asp-for="SecondaryContactPersonEmail" class="form-control" />
+                                                <label class="form-label">SecondaryContactPersonEmail</label>
+                                                <span asp-validation-for="SecondaryContactPersonEmail" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Check me out</label></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" @*asp-route-ClientId="@Model.ClientId"*@>Submit</button>
+                                <button type="submit" class="btn btn-primary" asp-action="Index">Back</button>
+                            </div>
+                            <!-- #END# Input -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,233 @@
+﻿@{
+    ViewData["Title"] = "Profile Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Index1";
+}
+
+@model HRMS.Web.Models.EmployeeContact
+
+
+<div class="row row-eq-height my-3">
+    <!-- Social Widget Start -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header white">
+                <strong class="s-18">Profile</strong><strong> - </strong> <span class="float-md-none s-18">@Model.Employeedetails.EmpCode</span>
+            </div>
+            <div class="card-body text-center">
+                <div class="image m-9"><img class="user_avatar no-b no-p r-3" src="~/img/dummy/u1.png" alt="User Image"></div>
+                <div>
+                    <h6 class="p-t-12">@Model.Employeedetails.FirstName @Model.Employeedetails.LastName</h6>                           @Model.Employeedetails.EmailID
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header  white">
+                <strong>Employement Details</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong class="s-14">Employee Type</strong>
+                    <span class="float-right s-14">@Model.Employeedetails.EmpTypeID</span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Joining Date</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Employeedetails.JoiningDate)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Status</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Employeedetails.Status)
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header  white">
+                <strong class="s-18">Department Details</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong class="s-14">Representative Person Employee ID</strong>
+                    <span class="float-right s-14">@Model.Employeedetails.RepPersonEmpID</span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Representative Name</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Employeedetails.RepPersonEmpID)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Department Name</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Employeedetails.DeptID)
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="row row-eq-height my-3">
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header  white">
+                <strong class="s-18">Contact Details</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong class="s-14">Contact ID</strong>
+                    <span class="float-right s-14">@Model.Contactdetails.EmpID</span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Personal Email ID</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.PersonalEmailID)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Date Of Birth</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.DOB)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Gender</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.Gender)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Blood Group</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.BloodGroup)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Mobile Number</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.MobileNo)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Emg.Contact Person Name</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.EmgContactPersonName)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Emg.Contact Mobile Number</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.EmgContactMobileNo)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Pan Number</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.PanNo)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Aadhar Number</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.AadharNumber)
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header  white">
+                <strong class="s-18">Present Address</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong class="s-14">House Number</strong>
+                    <span class="float-right s-14">@Model.Contactdetails.PrestAddr_HNo</span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Street</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.PrestAddr_Street)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">City</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.PrestAddr_City)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">State</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.PrestAddr_State)
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <strong class="s-14">Country</strong>
+                    <span class="float-right s-14">
+                        @Html.DisplayFor(model => model.Contactdetails.PrestAddr_Country)
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="card">
+                <div class="card-header  white">
+                    <strong class="s-18">Permanent Address</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong class="s-14">House Number</strong>
+                        <span class="float-right s-14">
+                            @Html.DisplayFor(model => model.Contactdetails.PermAddr_HNo)
+                        </span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong class="s-14">Street</strong>
+                        <span class="float-right s-14">
+                            @Html.DisplayFor(model => model.Contactdetails.PermAddr_Street)
+                        </span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong class="s-14">City</strong>
+                        <span class="float-right s-14">
+                            @Html.DisplayFor(model => model.Contactdetails.PermAddr_City)
+                        </span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong class="s-14">State</strong>
+                        <span class="float-right s-14">
+                            @Html.DisplayFor(model => model.Contactdetails.PermAddr_State)
+                        </span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong class="s-14">Country</strong>
+                        <span class="float-right s-14">
+                            @Html.DisplayFor(model => model.Contactdetails.PermAddr_Country)
+                        </span>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

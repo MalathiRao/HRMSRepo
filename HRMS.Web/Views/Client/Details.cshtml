@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model HRMS.Web.Models.Client
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3 my-3 border">
+    <h1>Client Details</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PrimaryContactPersonName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PrimaryContactPersonEmail)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.SecondaryContactPersonName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.SecondaryContactPersonEmail)
+        </dd>
+    </dl>     
+        <div class="form-group">
+            <a class="btn btn-primary mt-2" asp-action="Edit" asp-route-ClientId="@Model.ClientId"><i class="icon-arrow-right mr-2"></i>Edit</a>
+            <a class="btn btn-primary mt-2" asp-action="Index"><i class="icon-arrow-right mr-2"></i>Back</a>
+        </div>
+</div>

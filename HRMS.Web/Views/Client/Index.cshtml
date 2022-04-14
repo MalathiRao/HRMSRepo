@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Client Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Clients</h1>
+</div>
+
+<div class="container-fluid animatedParent animateOnce">
+    <div class="tab-content my-3" id="v-pills-tabContent">
+        <div class="tab-pane animated fadeInUpShort show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+            <div class="row my-3">
+                <div class="col-md-12">
+                    <div class="card r-0 shadow">
+                        <div class="table-responsive">
+                            <form>
+                                <table class="table table-striped table-hover r-0">
+                                    <thead>
+                                        <tr class="no-b">
+                                            <th style="width: 30px">
+                                                @*<div class="custom-control custom-checkbox"><input type="checkbox" id="checkedAll" class="custom-control-input"><label class="custom-control-label" for="checkedAll"></label></div>*@
+                                            </th>
+                                            <th>ClientId</th>
+                                            <th>ClientName</th>
+                                            <th>Address</th>
+                                            <th>Website</th>
+                                            <th>PrimaryContactPersonName</th>
+                                            <th>PrimaryContactPersonEmail</th>
+                                            <th>SecondaryContactPersonName</th>
+                                            <th>SecondaryContactPersonEmail</th><th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var d in Model)
+                                        {
+                                        <tr>
+                                            <td>
+                                                @*<div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input checkSingle" id="user_id_1" required><label class="custom-control-label" for="user_id_1"></label></div>*@
+                                            </td>
+                                            <td>@d.ClientId</td>
+                                            <td>
+                                                <div class="avatar avatar-md mr-3 mt-1 float-left"><span class="avatar-letter avatar-letter-a  avatar-md circle"></span></div>
+                                                <div>
+                                                    <div><strong>@d.ClientName</strong></div>
+                                                    <small></small>
+                                                </div>
+                                            </td>
+                                            <td>@d.Address</td>
+                                            <td>@d.Website</td>
+                                            <td>@d.PrimaryContactPersonName</td>
+                                            <td>@d.PrimaryContactPersonEmail</td>
+                                            <td>@d.SecondaryContactPersonName</td>
+                                            <td>@d.SecondaryContactPersonEmail</td>
+                                            @*<td><a href="panel-page-profile.html"><i class="icon-eye mr-3"></i></a><a href="panel-page-profile.html"><i class="icon-pencil"></i></a></td>*@
+                                            @*<td><a href="panel-page-profile.html"><i class="icon-eye mr-3"></i></a><a href="Edit"><i class="icon-pencil"></i></a></td>*@
+                                            <td>
+                                                <a asp-action="Details" asp-route-ClientId="@d.ClientId"><i class="icon-eye mr-3"></i></a>
+                                            </td>
+                                            <td>
+                                                <a asp-action="Edit" asp-route-ClientId="@d.ClientId"><i class="icon-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i class="icon-add"></i></a>
+</div>

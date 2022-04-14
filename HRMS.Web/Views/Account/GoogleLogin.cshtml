@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model HRMS.Web.GoogleOuath.LoginViewModel
+
+
+<h1 class="bg-info text-white">Account Login</h1>
+<div class="text-danger" asp-validation-summary="All"></div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Local Login</h1>
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-summary="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-summary="Password" class="text-danger"></span>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Log In</button>
+
+        </form>
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <h3>External Login</h3>
+    <hr />
+    @{
+        if (Model.ExternalLogins.Count == 0)
+        {
+            <div>NO Logins</div>
+        }
+        else
+        {
+            <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
+                <div>
+                    @foreach (var provider in Model.ExternalLogins)
+                    {
+                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Login user with account">
+                            @provider.DisplayName
+
+                        </button>
+                    }
+                </div>
+            </form>
+        }
+    }
+</div>
+
+
